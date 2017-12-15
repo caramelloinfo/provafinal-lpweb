@@ -12,11 +12,20 @@ import {RegistrarFrequenciaComponent} from './registrar-frequencia/registrar-fre
 import {ApiService} from './api.service';
 import {RelatorioDeFrequenciasComponent} from './relatorio-de-frequencias/relatorio-de-frequencias.component';
 import {ListaDeTurmasComponent} from './lista-de-turmas/lista-de-turmas.component';
+import { GerenciarTurmaComponent } from './gerenciar-turma/gerenciar-turma.component';
+import { RegistroDeNotasDoAlunoComponent } from './registro-de-notas-do-aluno/registro-de-notas-do-aluno.component';
+import { GerenciarDisciplinaComponent } from './gerenciar-disciplina/gerenciar-disciplina.component';
+import { HistoricoDoAlunoComponent } from './historico-do-aluno/historico-do-aluno.component';
 
 const appRoutes: Routes = [
   {path: 'frequencias/cadastrar', component: RegistrarFrequenciaComponent},
   {path: 'frequencias/relatorio', component: RelatorioDeFrequenciasComponent},
   {path: 'turmas', component: ListaDeTurmasComponent},
+
+  {path: 'turmas/:id', component: GerenciarTurmaComponent},
+  {path: 'turmas/:id/disciplinas:/disciplinaId/registrar-notas', component: RegistroDeNotasDoAlunoComponent},
+  {path: 'turmas/:id/disciplinas:/disciplinaId', component: GerenciarDisciplinaComponent},
+  {path: 'alunos/:id/historico', component: HistoricoDoAlunoComponent },
   {path: '', component: HomeComponent},
   {path: '**', component: PaginaNaoEncontradaComponent}
 ];
@@ -28,7 +37,11 @@ const appRoutes: Routes = [
     PaginaNaoEncontradaComponent,
     RegistrarFrequenciaComponent,
     RelatorioDeFrequenciasComponent,
-    ListaDeTurmasComponent
+    ListaDeTurmasComponent,
+    GerenciarTurmaComponent,
+    RegistroDeNotasDoAlunoComponent,
+    GerenciarDisciplinaComponent,
+    HistoricoDoAlunoComponent
   ],
   imports: [
     RouterModule.forRoot(
