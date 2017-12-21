@@ -1,0 +1,31 @@
+<!--//a) ano letivo;
+  //b) código da turma;
+  //c) nome do aluno; e
+  //d) situação do aluno na turma.-->
+
+<h1>Gerenciar Matrícula</h1> 
+<a routerLink="/matriculas/:id">+ Matricular aluno</a>
+<hr>
+<table class="table table-hover table-striped table-bordered">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Ano Letivo</th>
+      <th scope="col">Código da Turma</th>
+      <th scope="col">Nome do Aluno</th>
+      <th scope="col">Situação do Aluno</th>
+      <th scope="col">Gerenciar</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let m of matriculas">
+      <td>{{m.turma.ano}}</td>
+      <td>{{m.turma.codigo}}</td>
+      <td>{{m.aluno.nome}}</td>
+      <td>{{m.situacao}}</td>
+      <td>
+        <a routerLink="matriculas/:id" class="btn btn-primary">Gerenciar matrícula</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
